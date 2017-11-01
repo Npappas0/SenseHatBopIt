@@ -1,3 +1,7 @@
-from sense_hat import SenseHat
-sense = SenseHat()
-sense.show_message("Hello")
+from Gyro import gyro
+g = gyro()
+g.update()
+print(g.getRoll())
+print(g.getPitch())
+print(g.getYaw())
+
