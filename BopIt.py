@@ -10,7 +10,7 @@ s = score("PlayerOne")
 myList = ["Flip it", "Flick it", "Shake it"]
 sh.show_message("Welcome to BopIt", scroll_speed=0.06, text_colour=[0,255,255])
 time.sleep(1)
-sh.show_message("Ready? Lets Go", scroll_speed=0.06, text_colour=[0,255,255])
+sh.show_message("Ready? Lets Go!", scroll_speed=0.06, text_colour=[0,255,255])
 gameOver = False
 
 def command(n, g, gameOver):
@@ -32,8 +32,8 @@ def command(n, g, gameOver):
             s.changeScore(1)
             gameOver = command(randint(0,2), g, gameOver)
     if(gameOver == False):
-        print("GameOver Your score was ")
-        print(s.showScore())
+        sh.show_message("Game Over... Score: ",scroll_speed=0.06, text_colour=[0,255,255])
+        sh.show_message(str(s.showScore()),scroll_speed=0.06, text_colour=[0,255,255])
         return True
 
 command(randint(0,2), g, gameOver)
